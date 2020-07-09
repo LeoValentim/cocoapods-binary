@@ -91,7 +91,6 @@ module Pod
                 all += targets
             end
 
-            all = all.reject {|pod_target| sandbox.local?(pod_target.pod_name) }
             all.uniq
             )
         end
