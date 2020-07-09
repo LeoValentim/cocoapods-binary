@@ -22,7 +22,6 @@ module Pod
         class PodSourceInstaller
 
             def install_for_prebuild!(standard_sanbox)
-                return if standard_sanbox.local? self.name
 
                 # make a symlink to target folder
                 prebuild_sandbox = Pod::PrebuildSandbox.from_standard_sandbox(standard_sanbox)
@@ -124,7 +123,6 @@ module Pod
 
             updated_names.each do |name|
                 root_name = Specification.root_name(name)
-                next if self.sandbox.local?(root_name)
 
                 # delete the cached files
                 target_path = self.sandbox.pod_dir(root_name)
