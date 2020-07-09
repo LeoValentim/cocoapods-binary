@@ -109,7 +109,6 @@ module Pod
                 targets = self.pod_targets
             end
 
-            targets = targets.reject {|pod_target| sandbox.local?(pod_target.pod_name) }
 
             
             # build!
